@@ -263,9 +263,9 @@
             <div class="collapse navbar-collapse" id="main_nav">
 
               <ul class="navbar-nav">
-
+                <% for(var i=0;i<majCatFin.length;i++) {%>
                 <li class="nav-item dropdown">
-                  <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Men</a>
+                  <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"><%= majCatfin[i]%></a>
 
                   <ul class="dropdown-menu fade-up">
                     <div class="row">
@@ -358,6 +358,7 @@
 
 
                 </li>
+                <% } %>
                 <li class="nav-item dropdown">
                   <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Women</a>
                   <ul class="dropdown-menu fade-up">
