@@ -75,10 +75,7 @@ app.get('/myntra', (req, res) => {
 
     res.render('myntra');
 })
-var fin1 = [],fin2 = [],fin3 = [];
-app.get('/flipkart', (req, res) => {
-
-    var allItems = [];
+var allItems = [];
     var majCatFin = [];
     var majCat = [];
     var allWomenItems = [];
@@ -87,10 +84,13 @@ app.get('/flipkart', (req, res) => {
     var allMenItems = [];
     var subCatMen = [];
     var subCatMenFin = [];
-    async function f1(req, res) {
+app.get('/flipkart', (req, res) => {
+
+    
+    async function f1(req, rep) {
 
 
-        let temp3 = await flipkart.find({}, function (err, collection) {
+        let temp = await flipkart.find({}, function (err, collection) {
             if (err) console.log(err);
 
             allItems = collection;
@@ -102,16 +102,14 @@ app.get('/flipkart', (req, res) => {
             majCatFin = Array.from(new Set(majCat));
             
         });
-        if (temp3.err) {
+        if (temp.err) {
             console.log(err)
         }
         else {
-            
+            console.log("1"); 
         }
-    }
-    async function f2(req, res) {
 
-        let temp = await flipkart.find({ majorCategory: 'Men' }, function (err, collection) {
+        let temp1 = await flipkart.find({ majorCategory: 'Men' }, function (err, collection) {
             if (err)
                 console.log(err)
             allMenItems = collection;
@@ -124,16 +122,12 @@ app.get('/flipkart', (req, res) => {
             subCatMenFin = Array.from(new Set(subCatMen));
             
         });
-        if (temp.err) {
+        if (temp1.err) {
             console.log(err)
         }
         else {
-           
+            
         }
-    }
-
-    async function f3(req, res) {
-
 
         let temp2 = await flipkart.find({ majorCategory: 'Women' }, function (err, collection) {
             if (err)
@@ -146,20 +140,22 @@ app.get('/flipkart', (req, res) => {
             }
 
             subCatWomenFin = Array.from(new Set(subCatWomen));
-            
+           
         });
 
         if (temp2.err) {
             console.log(err)
         }
         else {
-           
+            
+            res.render("flipkart",{subCatWomenFin,majCatFin,subCatMenFin});
         }
-    }
-     f1();f2(); f3();
-     
 
-    res.render('flipkart',{majCatFin,subCatMenFin,subCatWomenFin});
+        
+    }
+  
+    f1();
+ 
 })
 
 app.get('/vogueIndia', (req, res) => {
