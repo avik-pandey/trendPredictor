@@ -14,17 +14,21 @@ mongoose.connect(url, {
 .then(() => {
       console.log('Connection to the Atlas Cluster is successfuul!');
   })
-.catch((err) => console.error(err));
+.catch((err) => console.error(err)); 
 
-var instaSchema = new mongoose.Schema({
-    hashtag:  String , 
-    imgUrl: String
-    
-  });
-  
-  
-  
-var insta = mongoose.model("insta", instaSchema);
+var flipkart = mongoose.Schema({
+    i: Number,
+    majorCategory: String,
+    subCategory: String,
+    Image:String,
+    Trending:Boolean,
+    Brand:String,
+    productInfo:String
+}, {collection: 'flipkart'});
+
+var flipkart = mongoose.model("flipkart",flipkart);
+
+ 
 
 const app = express()
 const port = process.env.PORT || 3000;
@@ -41,10 +45,19 @@ app.get('', (req, res) => {
 
 
 app.get('/myntra', (req, res) => {
+    
+
+
     res.render('myntra');
 })
 
 app.get('/flipkart', (req, res) => {
+
+    var majCat = [];
+    flipkart.find({},function(err,collection){ 
+        if(err)console.log(err);
+        console.log(collection)
+      });
     res.render('flipkart');
 })
 
@@ -59,6 +72,8 @@ app.get('/instaHashtags', (req, res) => {
 app.get('/pinterest', (req, res) => {
     res.render('pinterest');
 })
+
+
 
 
 
