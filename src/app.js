@@ -84,6 +84,24 @@ var allItems = [];
     var allMenItems = [];
     var subCatMen = [];
     var subCatMenFin = [];
+var footwearMen = [];
+app.get('/flipkart/Footwear',(req,res) => {
+    async function f1(req,rep){
+        let temp = await flipkart.find({subCategory:"Footwear"}, function(err,collection){
+            if(err)console.log(err)
+            footwearMen = collection;
+        })
+        if(temp.err){
+            console.log(err)
+        }
+        else{
+            console.log(footwearMen);
+            res.render('flipkart',{subCatWomenFin,majCatFin,subCatMenFin,footwearMen,modelsFin});
+        }
+    }
+    f1();
+})
+
 app.get('/flipkart', (req, res) => {
 
     
@@ -148,7 +166,7 @@ app.get('/flipkart', (req, res) => {
         }
         else {
             
-            res.render("flipkart",{subCatWomenFin,majCatFin,subCatMenFin});
+            res.render("flipkart",{subCatWomenFin,majCatFin,subCatMenFin,modelsFin,footwearMen});
         }
 
         
@@ -166,8 +184,35 @@ app.get('/instaHashtags', (req, res) => {
     res.render('instaHashtags');
 })
 
+var allItems1 = [];
+var models = [];
+var modelsFin = [];
+
+
 app.get('/pinterest', (req, res) => {
-    res.render('pinterest');
+
+    async function f1(req,rep){
+        let temp = await pinterest.find({}, function (err, collection){
+             if(err)
+             console.log(err)
+             allItems1 = collection;
+            //  console.log(allItems1);
+             for (var i = 0; i < allItems1.length; i++) {
+                var fake = allItems1[i].model
+                models.push(fake);
+            }
+             
+            modelsFin = Array.from(new Set(models));
+        })
+        if(temp.err){
+            console.log(err)
+        }
+        else{
+            console.log(modelsFin);
+            res.render('pinterest',{subCatWomenFin,majCatFin,subCatMenFin,modelsFin});
+        }
+    }
+    f1();
 })
 
 
