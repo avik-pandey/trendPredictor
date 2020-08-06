@@ -99,6 +99,16 @@ var sneakersMen = [];
 
 app.get('/flipkartFootwear', (req, res) => {
 
+    sportShoesMen = [];
+    casualShoesMen = [];
+    formalShoesMen = [];
+    sandalsMen = [];
+    flipflopsMen = [];
+    loafersMen = [];
+    bootsMen = [];
+    runningShoesMen = [];
+    sneakersMen = [];
+
     async function f1(req, rep) {
 
         let temp = await flipkart.find({}, function (err, collection) {
@@ -170,13 +180,24 @@ app.get('/flipkartFootwear', (req, res) => {
         }
         else {
             console.log(footwearMen);
-            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen,sandalsMen,bootsMen,flipflopsMen,loafersMen, sneakersMen  });
+            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen, sandalsMen, bootsMen, flipflopsMen, loafersMen, sneakersMen });
         }
     }
     f1();
 })
 
-app.get('/flipkartSportShoes', (req, res) => {
+app.get('/flipkartSports%20Shoes', (req, res) => {
+
+    footwearMen = [];
+
+    casualShoesMen = [];
+    formalShoesMen = [];
+    sandalsMen = [];
+    flipflopsMen = [];
+    loafersMen = [];
+    bootsMen = [];
+    runningShoesMen = [];
+    sneakersMen = [];
 
     async function f1(req, rep) {
 
@@ -239,7 +260,7 @@ app.get('/flipkartSportShoes', (req, res) => {
 
         }
 
-        let temp3 = await flipkart.find({ subCategory: "Sport Shoes" }, function (err, collection) {
+        let temp3 = await flipkart.find({ subCategory: "Sports Shoes" }, function (err, collection) {
             if (err) console.log(err)
             sportShoesMen = collection;
             modelsFin = [];
@@ -248,14 +269,26 @@ app.get('/flipkartSportShoes', (req, res) => {
             console.log(err)
         }
         else {
-            console.log(sportShoes);
-            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen,sandalsMen,bootsMen,flipflopsMen,loafersMen, sneakersMen  });
+            console.log(sportShoesMen);
+            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen, sandalsMen, bootsMen, flipflopsMen, loafersMen, sneakersMen });
         }
     }
     f1();
 })
 
-app.get('/flipkartCasualShoes', (req, res) => {
+app.get('/flipkartCasual%20Shoes', (req, res) => {
+
+    footwearMen = [];
+    sportShoesMen = [];
+
+    formalShoesMen = [];
+
+    sandalsMen = [];
+    flipflopsMen = [];
+    loafersMen = [];
+    bootsMen = [];
+    runningShoesMen = [];
+    sneakersMen = [];
 
     async function f1(req, rep) {
 
@@ -322,19 +355,31 @@ app.get('/flipkartCasualShoes', (req, res) => {
             if (err) console.log(err)
             casualShoesMen = collection;
             modelsFin = [];
+            console.log(collection);
         })
         if (temp3.err) {
             console.log(err)
         }
         else {
-            console.log(footwearMen);
-            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen,sandalsMen,bootsMen,flipflopsMen,loafersMen, sneakersMen  });
+            console.log(casualShoesMen);
+            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen, sandalsMen, bootsMen, flipflopsMen, loafersMen, sneakersMen });
         }
     }
     f1();
 })
 
-app.get('/flipkartFormalShoes', (req, res) => {
+app.get('/flipkartFormal%20Shoes', (req, res) => {
+
+    footwearMen = [];
+    sportShoesMen = [];
+    casualShoesMen = [];
+    sandalsMen = [];
+    flipflopsMen = [];
+    loafersMen = [];
+    bootsMen = [];
+    runningShoesMen = [];
+    sneakersMen = [];
+
 
     async function f1(req, rep) {
 
@@ -406,14 +451,24 @@ app.get('/flipkartFormalShoes', (req, res) => {
             console.log(err)
         }
         else {
-            console.log(footwearMen);
-            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen,sandalsMen,bootsMen,flipflopsMen,loafersMen, sneakersMen  });
+            console.log(formalShoesMen);
+            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen, sandalsMen, bootsMen, flipflopsMen, loafersMen, sneakersMen });
         }
     }
     f1();
 })
 
-app.get('/flipkartSandals', (req, res) => {
+app.get('/flipkartSandals%20&%20Floaters', (req, res) => {
+
+    footwearMen = [];
+    sportShoesMen = [];
+    casualShoesMen = [];
+    formalShoesMen = [];
+    flipflopsMen = [];
+    loafersMen = [];
+    bootsMen = [];
+    runningShoesMen = [];
+    sneakersMen = [];
 
     async function f1(req, rep) {
 
@@ -476,7 +531,7 @@ app.get('/flipkartSandals', (req, res) => {
 
         }
 
-        let temp3 = await flipkart.find({ subCategory: "Sandals" }, function (err, collection) {
+        let temp3 = await flipkart.find({ subCategory: "Sandals & Floaters" }, function (err, collection) {
             if (err) console.log(err)
             sandalsMen = collection;
             modelsFin = [];
@@ -485,14 +540,24 @@ app.get('/flipkartSandals', (req, res) => {
             console.log(err)
         }
         else {
-            console.log(footwearMen);
-            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen,sandalsMen,bootsMen,flipflopsMen,loafersMen, sneakersMen  });
+            console.log(sandalsMen);
+            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen, sandalsMen, bootsMen, flipflopsMen, loafersMen, sneakersMen });
         }
     }
     f1();
 })
 
-app.get('/flipkartFlipFlops', (req, res) => {
+app.get('/flipkartFlip-%20Flops', (req, res) => {
+
+    footwearMen = [];
+    sportShoesMen = [];
+    casualShoesMen = [];
+    sandalsMen = [];
+    formalShoesMen = [];
+    loafersMen = [];
+    bootsMen = [];
+    runningShoesMen = [];
+    sneakersMen = [];
 
     async function f1(req, rep) {
 
@@ -555,7 +620,7 @@ app.get('/flipkartFlipFlops', (req, res) => {
 
         }
 
-        let temp3 = await flipkart.find({ subCategory: "Flip Flops" }, function (err, collection) {
+        let temp3 = await flipkart.find({ subCategory: "Flip- Flops" }, function (err, collection) {
             if (err) console.log(err)
             flipflopsMen = collection;
             modelsFin = [];
@@ -564,14 +629,24 @@ app.get('/flipkartFlipFlops', (req, res) => {
             console.log(err)
         }
         else {
-            console.log(footwearMen);
-            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen,sandalsMen,bootsMen,flipflopsMen,loafersMen, sneakersMen  });
+            console.log(flipflopsMen);
+            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen, sandalsMen, bootsMen, flipflopsMen, loafersMen, sneakersMen });
         }
     }
     f1();
 })
 
 app.get('/flipkartLoafers', (req, res) => {
+
+    footwearMen = [];
+    sportShoesMen = [];
+    casualShoesMen = [];
+    sandalsMen = [];
+    flipflopsMen = [];
+    formalShoesMen = [];
+    bootsMen = [];
+    runningShoesMen = [];
+    sneakersMen = [];
 
     async function f1(req, rep) {
 
@@ -644,13 +719,23 @@ app.get('/flipkartLoafers', (req, res) => {
         }
         else {
             console.log(loafersMen);
-            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen,sandalsMen,bootsMen,flipflopsMen,loafersMen, sneakersMen  });
+            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen, sandalsMen, bootsMen, flipflopsMen, loafersMen, sneakersMen });
         }
     }
     f1();
 })
 
 app.get('/flipkartBoots', (req, res) => {
+
+    footwearMen = [];
+    sportShoesMen = [];
+    casualShoesMen = [];
+    sandalsMen = [];
+    flipflopsMen = [];
+    loafersMen = [];
+    formalShoesMen = [];
+    runningShoesMen = [];
+    sneakersMen = [];
 
     async function f1(req, rep) {
 
@@ -722,15 +807,15 @@ app.get('/flipkartBoots', (req, res) => {
             console.log(err)
         }
         else {
-            console.log(bootsMen);
-            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen,sandalsMen,bootsMen,flipflopsMen,loafersMen, sneakersMen  });
+            console.log(bootsMen.length, "ok");
+            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen, sandalsMen, bootsMen, flipflopsMen, loafersMen, sneakersMen });
         }
     }
     f1();
 })
 
 
-app.get('/flipkartRunningShoes', (req, res) => {
+app.get('/flipkartRunning%20Shoes', (req, res) => {
 
     async function f1(req, rep) {
 
@@ -803,13 +888,23 @@ app.get('/flipkartRunningShoes', (req, res) => {
         }
         else {
             console.log(footwearMen);
-            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen,sandalsMen,bootsMen,flipflopsMen,loafersMen, sneakersMen  });
+            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen, sandalsMen, bootsMen, flipflopsMen, loafersMen, sneakersMen });
         }
     }
     f1();
 })
 
 app.get('/flipkartSneakers', (req, res) => {
+
+    footwearMen = [];
+    sportShoesMen = [];
+    casualShoesMen = [];
+    sandalsMen = [];
+    flipflopsMen = [];
+    loafersMen = [];
+    bootsMen = [];
+    runningShoesMen = [];
+    formalShoesMen = [];
 
     async function f1(req, rep) {
 
@@ -882,13 +977,24 @@ app.get('/flipkartSneakers', (req, res) => {
         }
         else {
             console.log(sneakersMen);
-            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen,sandalsMen,bootsMen,flipflopsMen,loafersMen, sneakersMen  });
+            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen, sandalsMen, bootsMen, flipflopsMen, loafersMen, sneakersMen });
         }
     }
     f1();
-}) 
+})
 
 app.get('/flipkart', (req, res) => {
+
+    footwearMen = [];
+    sportShoesMen = [];
+    casualShoesMen = [];
+    sandalsMen = [];
+    flipflopsMen = [];
+    loafersMen = [];
+    bootsMen = [];
+    runningShoesMen = [];
+    sneakersMen = [];
+    formalShoesMen = [];
 
 
     async function f1(req, rep) {
@@ -952,7 +1058,7 @@ app.get('/flipkart', (req, res) => {
         }
         else {
 
-            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen,sandalsMen,bootsMen,flipflopsMen,loafersMen, sneakersMen  });
+            res.render("flipkart", { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen, sandalsMen, bootsMen, flipflopsMen, loafersMen, sneakersMen });
         }
 
 
@@ -996,7 +1102,7 @@ app.get('/pinterest', (req, res) => {
         }
         else {
             console.log(modelsFin);
-            res.render('pinterest', { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen,sandalsMen,bootsMen,flipflopsMen,loafersMen, sneakersMen  });
+            res.render('pinterest', { subCatWomenFin, majCatFin, subCatMenFin, footwearMen, modelsFin, sportShoesMen, casualShoesMen, runningShoesMen, formalShoesMen, sandalsMen, bootsMen, flipflopsMen, loafersMen, sneakersMen });
         }
     }
     f1();
