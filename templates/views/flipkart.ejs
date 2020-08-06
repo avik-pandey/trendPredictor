@@ -20,8 +20,9 @@
 
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     type="text/css" />
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
-    type="text/javascript"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 
 
   <style type="text/css">
@@ -272,7 +273,7 @@
                       <%if (i == 0) {%>
                       <div class="col-sm-2">
                         <% for(var j=0;j<13;j++) {%>
-                        <li><a class="dropdown-item" href="/flipkart/<%=subCatMenFin[j]%>"> <%=subCatMenFin[j]%></a></li>
+                        <li><a class="dropdown-item" href="/flipkart<%=subCatMenFin[j]%>"> <%=subCatMenFin[j]%></a></li>
                         <%}%>
                         
                       </div>
@@ -350,6 +351,7 @@
 
           <div class="container">
             <div class="row" style = "margin-top: 40px;">
+              
               <% for(var k = 0;k<footwearMen.length;k++){%>
               <div class="col-sm-4">
                 <div class="card" style="width: 14rem;">
@@ -362,6 +364,8 @@
                 </div>
               </div>
               <%}%>
+             
+              
               <!-- <div class="col-sm-4">
                 <div class="card" style="width: 14rem;">
                   <img class="card-img-top" src="..." alt="Card image cap">
@@ -420,14 +424,14 @@
   <!-- Logout Modal-->
   
 
-  <!-- Bootstrap core JavaScript-->
+  <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
-  <!-- Core plugin JavaScript-->
+  <!-- Core plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
+  <!-- Custom scripts for all pages -->
   <script src="js/sb-admin-2.min.js"></script>
 
 </body>
