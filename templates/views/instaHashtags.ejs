@@ -214,7 +214,8 @@
 
           <div class="row">
             <div class="col-3">
-              <button type="button" class="btn-sm btn-danger">#vogue2020</button>
+              <button type="button" class="btn-sm btn-danger"><a href="/instaHashtagsVogue2020">#vogue2020</a>
+                </button>
             </div>
 
             <div class="col-3">
@@ -233,36 +234,20 @@
 
           <div class="container">
             <div class="row" style = "margin-top: 40px;">
-              <div class="col-sm-4">
-                <div class="card" style="width: 14rem;">
-                  <img class="card-img-top" src="..." alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+              <% if(vogue2020.length  > 0){%>
+                <% for(var k = 0;k<vogue2020.length;k++){%>
+                <div class="col-sm-4">
+                  <div class="card" style="width: 14rem;">
+                    <img class="card-img-top" src="<%=vogue2020[k].imgUrl%>" style="height: 10px;" alt="Card image cap">
+                    <div class="card-body">
+                      
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="card" style="width: 14rem;">
-                  <img class="card-img-top" src="..." alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="card" style="width: 14rem;">
-                  <img class="card-img-top" src="..." alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
+                <%}%>
+                <%}%>
+              
+              
             </div>
   
   

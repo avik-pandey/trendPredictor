@@ -280,7 +280,7 @@
                     <div class="row">
                       <div class="col-sm-2">
                         <%for (var i=0;i<modelsFin.length;i++){%>
-                        <li><a class="dropdown-item" href="#"><%=modelsFin[i]%> </a></li>
+                        <li><a class="dropdown-item" href="/pinterest<%=modelsFin[i]%>"><%=modelsFin[i]%> </a></li>
                         <%}%>
                       </div>
                       
@@ -303,36 +303,22 @@
           </nav>
          <div class="container">
           <div class="row" style = "margin-top: 40px;">
-            <div class="col-sm-4">
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+            <% if(kendallJenner.length  > 0){%>
+              <% for(var k = 0;k<kendallJenner.length;k++){%>
+              <div class="col-sm-4">
+                <div class="card" style="width: 14rem;">
+                  <img class="card-img-top" src="<%=kendallJenner[k].imgUrl%>" style="height: 10px;" alt="Card image cap">
+                  <div class="card-body">
+                    <!-- <h5 class="card-title"><%=kendallJenner[k].Brand%></h5>
+                    <p class="card-text"><%=kendallJenner[k].productInfo%></p>
+                    <a href="#" class="btn btn-primary"><%=kendallJenner[k].Trending%></a> -->
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card" style="width: 14rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
+              <%}%>
+              <%}%>
+            
+            
           </div>
 
 
