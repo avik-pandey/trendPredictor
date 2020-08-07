@@ -250,7 +250,7 @@ var runningShoesMen = [];
 var clothingMen = [];
 var sneakersMen = [];
 
-
+//flipkart
 app.get('/flipkartFootwear', (req, res) => {
 
     sportShoesMen = [];
